@@ -1,0 +1,12 @@
+INFO:__main__:Dash is running on http://127.0.0.1:8050/
+
+INFO:main_flow:['Nuernberg', 'Stuttgart', 'Frankfurt', 'Paris', 'Vienna', 'Muenchen']
+INFO:main_flow:['Nuernberg', 'Stuttgart', 'Frankfurt', 'Paris', 'Vienna', 'Muenchen']
+INFO:main_flow:['Nuernberg', 'Stuttgart', 'Frankfurt', 'Paris', 'Nuernberg', 'Dresden', 'Vienna', 'Muenchen']
+INFO:main_flow:['Nuernberg', 'Stuttgart', 'Frankfurt', 'Paris', 'Dresden', 'Vienna', 'Muenchen']
+INFO:main_flow:['Nuernberg', 'Stuttgart', 'Frankfurt', 'Paris', 'Nuernberg', 'Dresden', 'Vienna', 'Muenchen']
+INFO:main_flow:['Nuernberg', 'Stuttgart', 'Frankfurt', 'Paris', 'Dresden', 'Vienna', 'Muenchen']
+INFO:__main__:Dash is running on http://127.0.0.1:8050/
+
+INFO:main_flow:['Nuernberg', 'Stuttgart', 'Frankfurt', 'Paris', 'Nuernberg', 'Dresden', 'Vienna', 'Muenchen']
+INFO:main_flow:['Nuernberg', 'Stuttgart', 'Frankfurt', 'Paris', 'Dresden', 'Vienna', 'Muenchen']

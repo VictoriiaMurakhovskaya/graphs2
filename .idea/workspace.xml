@@ -1,0 +1,485 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="396db0ce-0567-4db6-b908-167d9200a06a" name="Default Changelist" comment="Pause button active behaviour" />
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Python Script" />
+      </list>
+    </option>
+  </component>
+  <component name="FlaskConsoleOptions" custom-start-script="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))">
+    <envs>
+      <env key="FLASK_APP" value="app" />
+    </envs>
+    <option name="myCustomStartScript" value="import sys&#10;sys.path.extend([WORKING_DIR_AND_PYTHON_PATHS])&#10;from flask.cli import ScriptInfo&#10;locals().update(ScriptInfo(create_app=None).load_app().make_shell_context())&#10;print(&quot;Python %s on %s\nApp: %s [%s]\nInstance: %s&quot; % (sys.version, sys.platform, app.import_name, app.env, app.instance_path))" />
+    <option name="myEnvs">
+      <map>
+        <entry key="FLASK_APP" value="app" />
+      </map>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_BRANCH_BY_REPOSITORY">
+      <map>
+        <entry key="$PROJECT_DIR$" value="master" />
+      </map>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitSEFilterConfiguration">
+    <file-type-list>
+      <filtered-out-file-type name="LOCAL_BRANCH" />
+      <filtered-out-file-type name="REMOTE_BRANCH" />
+      <filtered-out-file-type name="TAG" />
+      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
+    </file-type-list>
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="0583f22c-8dbf-4091-b658-674c32ee063b" />
+        <option name="url" value="https://github.com/VictoriiaMurakhovskaya/graphs2.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="ProjectId" id="1tDlUvsrkJHN0r8Ozl0wr0WCw3Q" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="settings.editor.selected.configurable" value="com.jetbrains.python.configuration.PyActiveSdkModuleConfigurable" />
+  </component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\PyProj\graphs2\assets" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\PyProj\graphs2\assets" />
+      <recent name="C:\PyProj\graphs2\plotly_objects" />
+      <recent name="C:\PyProj\graphs2\algorithm" />
+      <recent name="C:\PyProj\graphs2\unit_test" />
+    </key>
+  </component>
+  <component name="RunManager" selected="Python.main_app">
+    <configuration name="main_app" type="PythonConfigurationType" factoryName="Python">
+      <module name="graphs2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\Anaconda3\envs\graphs2\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/index.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="test_app" type="PythonConfigurationType" factoryName="Python">
+      <module name="graphs2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <envs>
+        <env name="PYTHONUNBUFFERED" value="1" />
+      </envs>
+      <option name="SDK_HOME" value="C:\ProgramData\Anaconda3\envs\graphs2\python.exe" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="IS_MODULE_SDK" value="false" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <EXTENSION ID="net.ashald.envfile">
+        <option name="IS_ENABLED" value="false" />
+        <option name="IS_SUBST" value="false" />
+        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
+        <option name="IS_IGNORE_MISSING_FILES" value="false" />
+        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
+        <ENTRIES>
+          <ENTRY IS_ENABLED="true" PARSER="runconfig" />
+        </ENTRIES>
+      </EXTENSION>
+      <option name="SCRIPT_NAME" value="C:\PyProj\graphs2\unit_test\test_nn.py" />
+      <option name="PARAMETERS" value="" />
+      <option name="SHOW_COMMAND_LINE" value="false" />
+      <option name="EMULATE_TERMINAL" value="false" />
+      <option name="MODULE_MODE" value="false" />
+      <option name="REDIRECT_INPUT" value="false" />
+      <option name="INPUT_FILE" value="" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Python tests for test_concord.TestConcord" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+      <module name="graphs2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/unit_test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_concord.TestConcord&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for test_ca.TestApp" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="graphs2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/unit_test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_ca.TestApp&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for test_ca.TestApp.test_distance_with_external" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="graphs2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/unit_test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_ca.TestApp.test_distance_with_external&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests for test_nn.TestApp" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="graphs2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/unit_test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;test_nn.TestApp&quot;" />
+      <option name="_new_targetType" value="&quot;PYTHON&quot;" />
+      <method v="2" />
+    </configuration>
+    <configuration name="Unittests in unit_test" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+      <module name="graphs2" />
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SDK_HOME" value="" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/unit_test" />
+      <option name="IS_MODULE_SDK" value="true" />
+      <option name="ADD_CONTENT_ROOTS" value="true" />
+      <option name="ADD_SOURCE_ROOTS" value="true" />
+      <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
+      <option name="_new_additionalArguments" value="&quot;&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/unit_test&quot;" />
+      <option name="_new_targetType" value="&quot;PATH&quot;" />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="Python.main_app" />
+      <item itemvalue="Python.test_app" />
+      <item itemvalue="Python tests.Unittests for test_ca.TestApp" />
+      <item itemvalue="Python tests.Unittests for test_ca.TestApp.test_distance_with_external" />
+      <item itemvalue="Python tests.Unittests in unit_test" />
+      <item itemvalue="Python tests.Unittests for test_nn.TestApp" />
+      <item itemvalue="Python tests.Python tests for test_concord.TestConcord" />
+    </list>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Python tests.Python tests for test_concord.TestConcord" />
+        <item itemvalue="Python tests.Unittests in unit_test" />
+        <item itemvalue="Python tests.Unittests for test_nn.TestApp" />
+        <item itemvalue="Python tests.Unittests for test_ca.TestApp" />
+        <item itemvalue="Python tests.Unittests for test_ca.TestApp.test_distance_with_external" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\dmura\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="396db0ce-0567-4db6-b908-167d9200a06a" name="Default Changelist" comment="" />
+      <created>1622311559463</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1622311559463</updated>
+      <workItem from="1622311569172" duration="583000" />
+      <workItem from="1622312159637" duration="5677000" />
+      <workItem from="1622356260228" duration="6522000" />
+      <workItem from="1622386698360" duration="6069000" />
+      <workItem from="1622394485849" duration="11975000" />
+      <workItem from="1622437892028" duration="4000" />
+      <workItem from="1622492356774" duration="4916000" />
+      <workItem from="1622699515186" duration="216000" />
+      <workItem from="1623044091620" duration="3268000" />
+      <workItem from="1623052173844" duration="19000" />
+      <workItem from="1623064217860" duration="4033000" />
+      <workItem from="1623068444572" duration="4190000" />
+      <workItem from="1623076927805" duration="777000" />
+      <workItem from="1623082158939" duration="3000" />
+      <workItem from="1623128508674" duration="1281000" />
+      <workItem from="1623130301560" duration="2790000" />
+      <workItem from="1623739060444" duration="10891000" />
+      <workItem from="1623769328570" duration="5152000" />
+      <workItem from="1623780061007" duration="1660000" />
+      <workItem from="1623920866707" duration="717000" />
+      <workItem from="1623929291549" duration="2000" />
+      <workItem from="1624207789566" duration="3404000" />
+      <workItem from="1624212164196" duration="2032000" />
+      <workItem from="1624214994923" duration="3771000" />
+      <workItem from="1624221617854" duration="7367000" />
+      <workItem from="1624230536612" duration="72000" />
+      <workItem from="1624230622992" duration="2540000" />
+      <workItem from="1624287751816" duration="3000" />
+      <workItem from="1624521848801" duration="74000" />
+      <workItem from="1624616100092" duration="3976000" />
+      <workItem from="1624627437457" duration="2712000" />
+      <workItem from="1624651573247" duration="6000" />
+      <workItem from="1625073420179" duration="5977000" />
+      <workItem from="1625118684283" duration="1863000" />
+      <workItem from="1625111952702" duration="1791000" />
+      <workItem from="1625144948241" duration="3511000" />
+      <workItem from="1625148594728" duration="531000" />
+      <workItem from="1625153488984" duration="10269000" />
+      <workItem from="1625202503193" duration="3000" />
+      <workItem from="1625204417188" duration="5000" />
+      <workItem from="1625408999470" duration="89000" />
+      <workItem from="1625516304290" duration="951000" />
+      <workItem from="1625517850449" duration="2401000" />
+      <workItem from="1625551872878" duration="6000" />
+      <workItem from="1625989538966" duration="1930000" />
+      <workItem from="1625993847532" duration="596000" />
+      <workItem from="1626002126845" duration="2000" />
+      <workItem from="1627114762436" duration="448000" />
+      <workItem from="1627145228166" duration="2572000" />
+      <workItem from="1627212334517" duration="8217000" />
+      <workItem from="1627278373536" duration="18000" />
+      <workItem from="1627416302668" duration="3669000" />
+      <workItem from="1627450535698" duration="4000" />
+      <workItem from="1627498695638" duration="384000" />
+      <workItem from="1627499105548" duration="6457000" />
+      <workItem from="1627541583686" duration="355000" />
+      <workItem from="1628528933594" duration="9848000" />
+      <workItem from="1628540874883" duration="2064000" />
+      <workItem from="1628542966950" duration="1777000" />
+    </task>
+    <task id="LOCAL-00001" summary="Visual demo with NN-algorithm">
+      <created>1622408222917</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1622408222917</updated>
+    </task>
+    <task id="LOCAL-00002" summary="With Christophides' algorithm">
+      <created>1622497045207</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1622497045207</updated>
+    </task>
+    <task id="LOCAL-00003" summary="With Christophides' algorithm">
+      <created>1622497049742</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1622497049742</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Initial commit with cities back">
+      <created>1623072622356</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1623072622356</updated>
+    </task>
+    <task id="LOCAL-00005" summary="With selection">
+      <created>1623075412621</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1623075412621</updated>
+    </task>
+    <task id="LOCAL-00006" summary="With selection">
+      <created>1623076937596</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1623076937596</updated>
+    </task>
+    <task id="LOCAL-00007" summary="New architecture: model - view">
+      <created>1623781285810</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1623781285810</updated>
+    </task>
+    <task id="LOCAL-00008" summary="Prefinal version for preview">
+      <created>1624232797479</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1624232797479</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Refactored structure">
+      <created>1624233142900</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1624233142900</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Refactored structure">
+      <created>1624233162968</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1624233162968</updated>
+    </task>
+    <task id="LOCAL-00011" summary="Chrisofides algorithm with networkx">
+      <created>1625165327464</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1625165327464</updated>
+    </task>
+    <task id="LOCAL-00012" summary="Zoom fixed, Plotly Scatterbox object refactored">
+      <created>1627220918401</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1627220918401</updated>
+    </task>
+    <task id="LOCAL-00013" summary="One step excluded, MST added for all early steps">
+      <created>1627222295632</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1627222295632</updated>
+    </task>
+    <task id="LOCAL-00014" summary="UI changed">
+      <created>1627419991626</created>
+      <option name="number" value="00014" />
+      <option name="presentableId" value="LOCAL-00014" />
+      <option name="project" value="LOCAL" />
+      <updated>1627419991626</updated>
+    </task>
+    <task id="LOCAL-00015" summary="Project clean-up">
+      <created>1627499631010</created>
+      <option name="number" value="00015" />
+      <option name="presentableId" value="LOCAL-00015" />
+      <option name="project" value="LOCAL" />
+      <updated>1627499631010</updated>
+    </task>
+    <task id="LOCAL-00016" summary="Pause button active behaviour">
+      <created>1627505995830</created>
+      <option name="number" value="00016" />
+      <option name="presentableId" value="LOCAL-00016" />
+      <option name="project" value="LOCAL" />
+      <updated>1627505995830</updated>
+    </task>
+    <option name="localTasksCounter" value="17" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Visual demo with NN-algorithm" />
+    <MESSAGE value="With Christophides' algorithm" />
+    <MESSAGE value="Initial commit with cities back" />
+    <MESSAGE value="With selection" />
+    <MESSAGE value="New architecture: model - view" />
+    <MESSAGE value="Prefinal version for preview" />
+    <MESSAGE value="Refactored structure" />
+    <MESSAGE value="Chrisofides algorithm with networkx" />
+    <MESSAGE value="Zoom fixed, Plotly Scatterbox object refactored" />
+    <MESSAGE value="One step excluded, MST added for all early steps" />
+    <MESSAGE value="UI changed" />
+    <MESSAGE value="Project clean-up" />
+    <MESSAGE value="Pause button active behaviour" />
+    <option name="LAST_COMMIT_MESSAGE" value="Pause button active behaviour" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/unit_test/test_concord.py</url>
+          <line>17</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+      </breakpoints>
+      <default-breakpoints>
+        <breakpoint type="python-exception">
+          <properties notifyOnTerminate="true" exception="BaseException">
+            <option name="notifyOnTerminate" value="true" />
+          </properties>
+        </breakpoint>
+      </default-breakpoints>
+    </breakpoint-manager>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/graphs2$test_interaction.coverage" NAME="test_interaction Coverage Results" MODIFIED="1623128510596" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/graphs2$Unittests_for_test_ca_TestApp.coverage" NAME="Unittests for test_ca.TestApp Coverage Results" MODIFIED="1625989855103" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/unit_test" />
+    <SUITE FILE_PATH="coverage/graphs2$main_app.coverage" NAME="main_app Coverage Results" MODIFIED="1628544113525" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/graphs2$Unittests_for_test_py_TestApp.coverage" NAME="Unittests for test_py.TestApp Coverage Results" MODIFIED="1623748210714" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/graphs2$test_app.coverage" NAME="test_app Coverage Results" MODIFIED="1625163791519" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/graphs2$Unittests_for_test_nn_TestApp.coverage" NAME="Unittests for test_nn.TestApp Coverage Results" MODIFIED="1627499506075" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/unit_test" />
+    <SUITE FILE_PATH="coverage/graphs2$.coverage" NAME=" Coverage Results" MODIFIED="1628531070279" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/unit_test" />
+    <SUITE FILE_PATH="coverage/graphs2$Unittests_for_test_ca_TestApp_test_odd.coverage" NAME="Unittests for test_ca.TestApp.test_odd Coverage Results" MODIFIED="1624629480477" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/unit_test" />
+    <SUITE FILE_PATH="coverage/graphs2$Unittests_in_unit_test.coverage" NAME="Unittests in unit_test Coverage Results" MODIFIED="1627499536922" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/unit_test" />
+    <SUITE FILE_PATH="coverage/graphs2$Unittests_for_unit_test_test_nn_TestApp.coverage" NAME="Unittests for unit_test.test_nn.TestApp Coverage Results" MODIFIED="1624215939535" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/graphs2$Unittests_for_test_distances_TestApp.coverage" NAME="Unittests for test_distances.TestApp Coverage Results" MODIFIED="1624228836455" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/unit_test" />
+    <SUITE FILE_PATH="coverage/graphs2$Unittests_for_test_py_TestApp_test_nodes.coverage" NAME="Unittests for test_py.TestApp.test_nodes Coverage Results" MODIFIED="1623746559948" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/graphs2$Unittests_for_test_py_TestApp_test_distance.coverage" NAME="Unittests for test_py.TestApp.test_distance Coverage Results" MODIFIED="1623774492132" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/graphs2$Unittests_for_test_ca_TestApp_test_optimal_matching.coverage" NAME="Unittests for test_ca.TestApp.test_optimal_matching Coverage Results" MODIFIED="1625162345966" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/unit_test" />
+    <SUITE FILE_PATH="coverage/graphs2$Unittests_for_test_py_TestApp_test_path.coverage" NAME="Unittests for test_py.TestApp.test_path Coverage Results" MODIFIED="1623745929660" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/graphs2$Unittests_for_test_ca_TestApp_test_distance.coverage" NAME="Unittests for test_ca.TestApp.test_distance Coverage Results" MODIFIED="1625155831178" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/unit_test" />
+    <SUITE FILE_PATH="coverage/graphs2$Unittests_for_test_ca_TestApp_test_distance_with_external.coverage" NAME="Unittests for test_ca.TestApp.test_distance_with_external Coverage Results" MODIFIED="1625519843642" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/unit_test" />
+    <SUITE FILE_PATH="coverage/graphs2$Unittests_for_test_ca_TestApp_test_standart_test.coverage" NAME="Unittests for test_ca.TestApp.test_standart_test Coverage Results" MODIFIED="1624212214891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/unit_test" />
+    <SUITE FILE_PATH="coverage/graphs2$Unittests_for_test_py_TestApp_test_start.coverage" NAME="Unittests for test_py.TestApp.test_start Coverage Results" MODIFIED="1623744417969" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+  </component>
+</project>
