@@ -390,4 +390,4 @@ app.layout = html.Div([dcc.Location(id='loc', refresh=True),
                        ])
 
 if __name__ == '__main__':
-    app.run_server(debug=True)
+    app.run_server(debug=False)
