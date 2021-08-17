@@ -173,6 +173,7 @@ def make_modal(alg_name):
 
 app = dash.Dash(__name__, external_stylesheets=[dbc.themes.BOOTSTRAP])
 app.config.suppress_callback_exceptions = True
+server = app.server
 
 
 @app.callback(
