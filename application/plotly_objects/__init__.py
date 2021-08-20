@@ -64,6 +64,8 @@ class BaseMap:
 
     def get_map(self, highlight_path=None, second_highlight_path=None, highlight_nodes=None, initial=False):
 
+        self._fig.data = []
+
         if highlight_path is not None:
             if isinstance(highlight_path, list):
                 connect = self._cities.loc[self._cities.index.isin(highlight_path)]
@@ -177,9 +179,6 @@ class BaseMap:
                 ),
                 hoverinfo='text'
             ))
-
-
-
 
         if initial:
             self._zoom = ZOOM
