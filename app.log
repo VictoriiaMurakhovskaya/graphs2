@@ -24,3 +24,52 @@ INFO:werkzeug:127.0.0.1 - - [17/Aug/2021 21:38:17] "[35m[1mPOST /_dash-update-
 INFO:__main__:Dash is running on http://127.0.0.1:8050/
 
 INFO:werkzeug: * Running on http://127.0.0.1:8050/ (Press CTRL+C to quit)
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:31:28] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:31:28] "GET /_dash-dependencies HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:31:28] "GET /_dash-layout HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:31:28] "[36mGET /_dash-component-suites/dash_core_components/async-dropdown.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:31:28] "[36mGET /_dash-component-suites/dash_core_components/async-graph.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:31:28] "[36mGET /_dash-component-suites/dash_core_components/async-plotlyjs.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:31:28] "POST /_dash-update-component HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:31:29] "[35m[1mPOST /_dash-update-component HTTP/1.1[0m" 204 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:31:29] "[35m[1mPOST /_dash-update-component HTTP/1.1[0m" 204 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:31:31] "POST /_dash-update-component HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:31:32] "POST /_dash-update-component HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:31:32] "POST /_dash-update-component HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:31:33] "POST /_dash-update-component HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:31:35] "POST /_dash-update-component HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:31:37] "POST /_dash-update-component HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:31:39] "POST /_dash-update-component HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:31:41] "POST /_dash-update-component HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:45:45] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:45:45] "GET /_dash-dependencies HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:45:45] "GET /_favicon.ico?v=1.21.0 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:45:45] "GET /_dash-layout HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:45:45] "[36mGET /_dash-component-suites/dash_core_components/async-dropdown.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:45:45] "[36mGET /_dash-component-suites/dash_core_components/async-graph.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:45:45] "[36mGET /_dash-component-suites/dash_core_components/async-plotlyjs.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:45:45] "POST /_dash-update-component HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:45:46] "[35m[1mPOST /_dash-update-component HTTP/1.1[0m" 204 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:45:46] "[35m[1mPOST /_dash-update-component HTTP/1.1[0m" 204 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:45:48] "POST /_dash-update-component HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:45:49] "POST /_dash-update-component HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:45:49] "POST /_dash-update-component HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:45:50] "POST /_dash-update-component HTTP/1.1" 200 -
+INFO:werkzeug: * Running on http://127.0.0.1:8000/ (Press CTRL+C to quit)
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:47:37] "GET / HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:47:38] "GET /_dash-dependencies HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:47:38] "GET /_favicon.ico?v=1.21.0 HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:47:38] "GET /_dash-layout HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:47:38] "[36mGET /_dash-component-suites/dash_core_components/async-dropdown.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:47:38] "[36mGET /_dash-component-suites/dash_core_components/async-graph.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:47:38] "[36mGET /_dash-component-suites/dash_core_components/async-plotlyjs.js HTTP/1.1[0m" 304 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:47:38] "POST /_dash-update-component HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:47:38] "[35m[1mPOST /_dash-update-component HTTP/1.1[0m" 204 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:47:39] "[35m[1mPOST /_dash-update-component HTTP/1.1[0m" 204 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:47:40] "POST /_dash-update-component HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:47:41] "POST /_dash-update-component HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:47:42] "POST /_dash-update-component HTTP/1.1" 200 -
+INFO:werkzeug:127.0.0.1 - - [30/Aug/2021 23:47:42] "POST /_dash-update-component HTTP/1.1" 200 -

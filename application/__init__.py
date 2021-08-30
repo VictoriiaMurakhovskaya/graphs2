@@ -1,6 +1,4 @@
-from application.algorithm.algorithm import NearestNeighbour
-from application.algorithm.christ import ChristAlgorithm
-from application.algorithm.concord import ConcordAlgorithm
+from application.algorithm import PathMaker
 from application.plotly_objects import BaseMap
 
 import dash_core_components as dcc
@@ -303,14 +301,8 @@ def display_click_data(click_data, n, timer, alg, n2, rel_data, n3, run_timer_st
             main_figure.cleaned_map()
 
             if len(work_df) > 0:
-                if alg == 'NN':
-                    nn = NearestNeighbour(work_df, work_df.index[0])
-                elif alg == 'CA':
-                    nn = ChristAlgorithm(work_df)
-                elif alg == 'CC':
-                    nn = ConcordAlgorithm(work_df)
-                else:
-                    raise ValueError("Incorrect algorithm type")
+
+                nn = PathMaker.return_path_data(alg, work_df)
 
                 path = nn.path_sequence
 

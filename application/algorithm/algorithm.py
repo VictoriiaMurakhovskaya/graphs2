@@ -17,7 +17,7 @@ class NearestNeighbour:
         :param nodes: the list of nodes as DataFrame:
             index - city name
             columns - lat, long
-        :param start: the start point (is significant for the Nearest neighbour
+        :param start: the start point (is significant for the Nearest neighbour)
         """
         self.df = nodes
         self.start = start
