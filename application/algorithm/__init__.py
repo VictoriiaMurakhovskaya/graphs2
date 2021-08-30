@@ -15,7 +15,7 @@ class PathData:
     path: list = field(default_factory=list)
     path_sequence: dict = field(default_factory=dict)
     second_path_sequence: list = field(default_factory=list)
-    nodes: dict = field(default_factory=dict)
+    nodes_sequence: dict = field(default_factory=dict)
 
 
 class PathMaker:
@@ -42,6 +42,6 @@ class PathMaker:
             path_data.second_path_sequence = path_info.second_path_sequence
         else:
             path_data.second_path_sequence = {k: [] for k, v in path_data.path_sequence.items()}
-        path_data.nodes = path_info.nodes_sequence
+        path_data.nodes_sequence = path_info.nodes_sequence
 
         return path_data
