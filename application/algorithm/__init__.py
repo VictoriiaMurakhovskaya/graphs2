@@ -45,3 +45,14 @@ class PathMaker:
         path_data.nodes_sequence = path_info.nodes_sequence
 
         return path_data
+
+    @staticmethod
+    def return_path_json(alg: str, work_df: DataFrame) -> dict:
+
+        path_data = PathMaker.return_path_data(alg, work_df)
+
+        return {"distance": path_data.distance,
+                "complexity": path_data.complexity,
+                "nodes": path_data.nodes_sequence,
+                "path_1": path_data.path_sequence,
+                "path_2": path_data.second_path_sequence}
