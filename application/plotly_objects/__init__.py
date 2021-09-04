@@ -51,13 +51,10 @@ class PlotlyMap:
                  initial: bool = False) -> (go.Figure, tuple, float):
 
         logger = logging.getLogger('local_writer')
-        logger.debug(f'Getting map. Zoom: {zoom}, Center: {center}')
-        logger.debug(f'Initial = {initial}')
-        logger.debug(f'Selected cities: {selected}')
 
         if highlight_path is not None:
+            logger.debug(f'First highlight path: {highlight_path}')
             if isinstance(highlight_path, list):
-                logger.debug(f'Received highlighted path {highlight_path}')
                 connect = self._cities.loc[self._cities.index.isin(highlight_path)]
                 connect = connect.reindex(index=highlight_path)
                 self._fig.add_trace(go.Scattermapbox(
@@ -88,6 +85,7 @@ class PlotlyMap:
                 raise TypeError("Incorrect input type")
 
         if second_highlight_path is not None:
+            logger.debug(f'Second highlight path: {second_highlight_path}')
             if isinstance(second_highlight_path, list):
                 connect = self._cities.loc[self._cities.index.isin(second_highlight_path)]
                 connect = connect.reindex(index=highlight_path)
@@ -156,22 +154,23 @@ class PlotlyMap:
         """
         Highlighting nodes
         """
-        # if highlight_nodes is not None:
-        #     highlight_lat, highlight_lon = [], []
-        #     for item in highlight_nodes:
-        #         highlight_lon.append(self._cities.at[item, 'long'])
-        #         highlight_lat.append(self._cities.at[item, 'lat'])
-        #     self._fig.add_trace(go.Scattermapbox(
-        #         lat=highlight_lat,
-        #         lon=highlight_lon,
-        #         mode='markers',
-        #         marker=go.scattermapbox.Marker(
-        #             size=NODE_SIZE,
-        #             color=HIGHLIGHTED_NODE_COLOR,
-        #             opacity=1
-        #         ),
-        #         hoverinfo='text'
-        #     ))
+        if highlight_nodes is not None:
+            logger.debug(f'Highlighted nodes: {highlight_nodes}')
+            highlight_lat, highlight_lon = [], []
+            for item in highlight_nodes:
+                highlight_lon.append(self._cities.at[item, 'long'])
+                highlight_lat.append(self._cities.at[item, 'lat'])
+            self._fig.add_trace(go.Scattermapbox(
+                lat=highlight_lat,
+                lon=highlight_lon,
+                mode='markers',
+                marker=go.scattermapbox.Marker(
+                    size=NODE_SIZE,
+                    color=HIGHLIGHTED_NODE_COLOR,
+                    opacity=1
+                ),
+                hoverinfo='text'
+            ))
 
         self._fig.update_layout(
             autosize=True,

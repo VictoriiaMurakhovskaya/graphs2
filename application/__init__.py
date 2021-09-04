@@ -233,7 +233,9 @@ def start_calculations(n, alg, local_state):
         if (n > 0) & (local_state is not None):
             if len(local_state['selected']) > 0:
                 work_df = df.loc[df.index.isin(local_state['selected'])].copy()
-                return PathMaker.return_path_json(alg, work_df)
+                path = PathMaker.return_path_json(alg, work_df)
+                logger.debug(f'Path created: {path}')
+                return path
     else:
         raise PreventUpdate
 
