@@ -1,5 +1,8 @@
-from application.algorithm import PathMaker
 from application.plotly_objects import PlotlyMap
+from application.algorithm.n_neighbour import NearestNeighbour
+from application.algorithm.christ import ChristAlgorithm
+from application.algorithm.concord import ConcordAlgorithm
+from application.algorithm import PathData
 
 import dash_core_components as dcc
 import dash_html_components as html
@@ -8,6 +11,7 @@ import dash
 from dash.dependencies import Input, Output, State
 import dash_daq as daq
 from dash.exceptions import PreventUpdate
+
 
 import logging
 import pandas as pd
@@ -53,6 +57,33 @@ sh = logging.StreamHandler()
 formatter = logging.Formatter('%(asctime)s - %(levelname)s - %(message)s')
 sh.setFormatter(formatter)
 logger.addHandler(sh)
+
+
+class PathMaker:
+
+    @staticmethod
+    def return_path_data(alg: str, work_df: pd.DataFrame):
+        if alg == 'NN':
+            path_info = NearestNeighbour.path_facility(work_df, work_df.index[0])
+        elif alg == 'CA':
+            path_info = ChristAlgorithm.path_facility(work_df)
+        elif alg == 'CC':
+            path_info = ConcordAlgorithm(work_df)
+        else:
+            raise ValueError("Incorrect algorithm type")
+
+        return path_info
+
+    @staticmethod
+    def return_path_json(alg: str, work_df: pd.DataFrame) -> dict:
+
+        path_data = PathMaker.return_path_data(alg, work_df)
+
+        return {"distance": path_data.distance,
+                "complexity": path_data.complexity,
+                "nodes": path_data.nodes_sequence,
+                "path_1": path_data.path_sequence,
+                "path_2": path_data.second_path_sequence}
 
 
 def navBar():

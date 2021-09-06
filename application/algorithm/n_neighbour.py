@@ -1,8 +1,7 @@
 import pandas as pd
-from itertools import combinations
-from geopy.distance import geodesic
 import numpy as np
 from .utils import distances_table
+from . import PathData
 
 
 class NearestNeighbour:
@@ -30,78 +29,6 @@ class NearestNeighbour:
         self.df = self.df.sort_values(by='city', ascending=True)
         self.df['city'] = self.df.index
         self.distances = self.get_distances()
-
-    @property
-    def complexity(self):
-        return self._complexity
-
-    @complexity.setter
-    def complexity(self, value):
-        raise Exception("The property is read only")
-
-    @complexity.getter
-    def complexity(self):
-        if self._complexity == 0:
-            self.get_scenario()
-        return self._complexity
-
-    @property
-    def distance(self):
-        return self._distance
-
-    @distance.setter
-    def distance(self, value):
-        raise Exception("The property is read only")
-
-    @distance.getter
-    def distance(self):
-        if self._distance == 0:
-            self.get_scenario()
-        return self._distance
-
-    @property
-    def path(self):
-        return self._path
-
-    @path.setter
-    def path(self, value):
-        raise Exception("The property can't be set")
-
-    @path.getter
-    def path(self):
-        if not self._path:
-            self.get_scenario()
-        return self._path
-
-    @property
-    def path_sequence(self):
-        return self._path_sequence
-
-    @path_sequence.setter
-    def path_sequence(self, value):
-        raise Exception("The property can't be set")
-
-    @path_sequence.getter
-    def path_sequence(self):
-        if not self._path_sequence:
-            self.get_scenario()
-        return self._path_sequence
-
-    @property
-    def nodes_sequence(self):
-        if not self._path_sequence:
-            self.get_scenario()
-        return self._nodes_sequence
-
-    @nodes_sequence.setter
-    def nodes_sequence(self, value):
-        raise Exception("The property can't be set")
-
-    @nodes_sequence.getter
-    def nodes_sequence(self):
-        if not self._path_sequence:
-            self.get_scenario()
-        return self._nodes_sequence
 
     def neighbour(self, current, visited):
         """
@@ -136,7 +63,8 @@ class NearestNeighbour:
         if len(self.distances) > 0:
             df_loc = self.distances.loc[(self.distances['city1'] == city1) & (self.distances['city2'] == city2)].copy()
             if len(df_loc) == 0:
-                df_loc = self.distances.loc[(self.distances['city1'] == city2) & (self.distances['city2'] == city1)].copy()
+                df_loc = self.distances.loc[
+                    (self.distances['city1'] == city2) & (self.distances['city2'] == city1)].copy()
             return df_loc.at[df_loc.index[0], 'dist']
         else:
             return 0
@@ -154,18 +82,24 @@ class NearestNeighbour:
 
         return [self.start] + sequence + [self.start]
 
-    def get_scenario(self):
+    @staticmethod
+    def path_facility(nodes, start) -> PathData:
         """
-        Updates all the properties basing on current df
-        :return:
+        Path facility using nearest neighbour algorithm
+        :return: path data
         """
-        self._distance = 0
-        self._path = self.find_path()
-        self._path_sequence = {i: self._path[:i + 2] for i in range(len(self._path) - 1)}
+        nn_path = NearestNeighbour(nodes, start)
 
-        self._nodes_sequence = {i: self._path[: i + 2] for i in range(len(self._path) - 2)}
-        self._nodes_sequence.update({len(self._nodes_sequence.keys()):
-                                         self._nodes_sequence[len(self._nodes_sequence.keys()) - 1]})
+        path = nn_path.find_path()
 
-        self._distance = np.sum([self.get_distance(self._path[i],
-                                                   self._path[i + 1]) for i in range(len(self._path) - 1)])
+        path_sequence = {i: path[:i + 2] for i in range(len(path) - 1)}
+        second_path_sequence = {k: [] for k, v in path_sequence.items()}
+
+        nodes_sequence = {i: path[: i + 2] for i in range(len(path) - 2)}
+        nodes_sequence.update({len(nodes_sequence.keys()):
+                                   nodes_sequence[len(nodes_sequence.keys()) - 1]})
+
+        distance = float(np.sum([nn_path.get_distance(path[i], path[i + 1]) for i in range(len(path) - 1)]))
+
+        return PathData(distance=distance, complexity=0, path=path, path_sequence=path_sequence,
+                        second_path_sequence=second_path_sequence, nodes_sequence=nodes_sequence)
