@@ -68,7 +68,7 @@ class PathMaker:
         elif alg == 'CA':
             path_info = ChristAlgorithm.path_facility(work_df)
         elif alg == 'CC':
-            path_info = ConcordAlgorithm(work_df)
+            path_info = ConcordAlgorithm.path_facility(work_df)
         else:
             raise ValueError("Incorrect algorithm type")
 
