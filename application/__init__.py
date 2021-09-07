@@ -12,7 +12,6 @@ from dash.dependencies import Input, Output, State
 import dash_daq as daq
 from dash.exceptions import PreventUpdate
 
-
 import logging
 import pandas as pd
 import pathlib
@@ -84,6 +83,30 @@ class PathMaker:
                 "nodes": path_data.nodes_sequence,
                 "path_1": path_data.path_sequence,
                 "path_2": path_data.second_path_sequence}
+
+
+class MainResponse:
+
+    @classmethod
+    def response(cls,
+                 main_graph=dash.no_update,
+                 local_state=dash.no_update,
+                 run_timer=dash.no_update,
+                 distance=dash.no_update,
+                 complexity=dash.no_update,
+                 pause_disabled=None,
+                 pause_value=None
+                 ):
+
+        if pause_disabled is None:
+            pause_disabled = run_timer
+
+        if pause_value is None:
+            pause_return = dash.no_update
+        else:
+            pause_return = pause_value
+
+        return main_graph, local_state, run_timer, distance, complexity, pause_disabled, pause_return
 
 
 def navBar():
@@ -288,21 +311,25 @@ def start_calculations(n, alg, local_state):
      Output('local_state', 'data'),
      Output('run-timer', 'disabled'),
      Output('distance-display', 'value'),
-     Output('complex-display', 'value')
+     Output('complex-display', 'value'),
+     Output('pause', 'disabled'),
+     Output('pause', 'children')
      ],
     [Input('main-graph', 'clickData'),
      Input('main-graph', 'relayoutData'),
      Input('path_data', 'data'),
      Input('run-timer', 'n_intervals'),
-     Input('reset', 'n_clicks')
+     Input('reset', 'n_clicks'),
+     Input('pause', 'n_clicks')
      ],
     [State('run-timer', 'disabled'),
      State('local_state', 'data'),
-     State('path_data', 'data')]
+     State('path_data', 'data'),
+     State('pause', 'children')]
 )
 def display_click_data(
-        click_data, rel_data, path_data_trigger, timer,  n_reset,  # inputs
-        run_timer_status, local_state, path_data  # states
+        click_data, rel_data, path_data_trigger, timer, n_reset, n_pause,  # inputs
+        run_timer_status, local_state, path_data, pause_label  # states
 ):
     """
     Main callback updating the graph
@@ -350,13 +377,15 @@ def display_click_data(
                     zoom = rel_data['mapbox.zoom']
                     fig, _, _ = PlotlyMap.get_featured_map(df, selected=selected,
                                                            zoom=zoom, center=center)
-                    return fig, {'selected': selected, 'zoom': zoom, 'center': center}, dash.no_update, distance, complexity
+                    return MainResponse.response(main_graph=fig,
+                                                 local_state={'selected': selected, 'zoom': zoom, 'center': center},
+                                                 distance=distance, complexity=complexity)
 
                 else:
-                    return dash.no_update, dash.no_update, dash.no_update, distance, complexity
+                    return MainResponse.response(distance=distance, complexity=complexity)
 
             else:
-                return dash.no_update, dash.no_update, dash.no_update, distance, complexity
+                return MainResponse.response(distance=distance, complexity=complexity)
 
         elif ctx_2 == 'clickData':
             if click_data:
@@ -372,17 +401,19 @@ def display_click_data(
                     fig, _, _ = PlotlyMap.get_featured_map(df, selected=selected,
                                                            zoom=zoom, center=center)
 
-                    return fig, {'selected': selected, 'zoom': zoom, 'center': center}, dash.no_update, distance, complexity
+                    return MainResponse.response(main_graph=fig,
+                                                 local_state={'selected': selected, 'zoom': zoom, 'center': center},
+                                                 distance=distance, complexity=complexity)
 
                 except Exception as ex:
                     logger.critical(f'{ex}')
                     raise PreventUpdate
 
             else:
-                return dash.no_update, dash.no_update, dash.no_update, distance, complexity
+                return MainResponse.response(distance=distance, complexity=complexity)
 
         else:
-            return dash.no_update, dash.no_update, dash.no_update, distance, complexity
+            return MainResponse.response(distance=distance, complexity=complexity)
 
     elif ctx == 'path_data':
         logger.debug('Run timer started')
@@ -391,8 +422,10 @@ def display_click_data(
         fig, _, _ = PlotlyMap.get_featured_map(df, selected=selected, zoom=zoom, center=center,
                                                highlight_path=path_1['0'], second_highlight_path=path_2['0'],
                                                highlight_nodes=nodes['0'])
-        return fig, {'selected': selected, 'zoom': zoom, 'center': center, 'counter': counter + 1},\
-               False, distance, complexity
+        return MainResponse.response(main_graph=fig,
+                                     local_state={'selected': selected, 'zoom': zoom, 'center': center,
+                                                  'counter': counter + 1},
+                                     run_timer=False, distance=distance, complexity=complexity)
 
     elif ctx == 'run-timer':
         logger.debug('Run timer interval')
@@ -403,20 +436,31 @@ def display_click_data(
                                                    highlight_path=path_1[str(counter)],
                                                    second_highlight_path=path_2[str(counter)],
                                                    highlight_nodes=nodes[str(counter)])
-            return fig, {'selected': selected, 'zoom': zoom, 'center': center, 'counter': counter + 1},\
-                   False, distance, complexity
+            return MainResponse.response(main_graph=fig,
+                                         local_state={'selected': selected, 'zoom': zoom, 'center': center,
+                                                      'counter': counter + 1},
+                                         run_timer=False, distance=distance, complexity=complexity, pause_value='Pause')
         else:
-            return dash.no_update, {'selected': selected, 'zoom': zoom, 'center': center, 'counter': 0}, True, distance, complexity
+            return MainResponse.response(local_state={'selected': selected, 'zoom': zoom, 'center': center, 'counter': 0},
+                                         run_timer=True, distance=distance, complexity=complexity, pause_value='Pause')
 
     elif ctx == 'reset':
         logger.debug('Map reset')
         distance, complexity = '0000', '0000'
-        return PlotlyMap.cleaned_map(df, zoom=DEFAULT_ZOOM), \
-               {'selected': [], 'zoom': DEFAULT_ZOOM, 'center': center, 'counter': 0}, \
-               True, distance, complexity
+
+        return MainResponse.response(main_graph=PlotlyMap.cleaned_map(df, zoom=DEFAULT_ZOOM),
+                                     local_state={'selected': [], 'zoom': DEFAULT_ZOOM, 'center': center, 'counter': 0},
+                                     run_timer=True, distance=distance, complexity=complexity, pause_value='Pause')
+
+    elif ctx == 'pause':
+        if pause_label == 'Pause':
+            pause_label = 'Continue'
+        else:
+            pause_label = 'Pause'
+        return MainResponse.response(run_timer=not run_timer_status, pause_disabled=False, pause_value=pause_label)
 
     else:
-        return dash.no_update, dash.no_update, dash.no_update, distance, complexity
+        return MainResponse.response(distance=distance, complexity=complexity)
 
 
 # main application layout
