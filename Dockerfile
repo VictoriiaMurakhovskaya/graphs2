@@ -16,5 +16,5 @@ ENV APP_PATH=/opt/app
 ADD application /opt/app/application
 
 CMD cd application
-CMD gunicorn -b 0.0.0.0:8000 application.index:server
+CMD gunicorn -b 0.0.0.0:8000 application.__init__:server
 EXPOSE 8000

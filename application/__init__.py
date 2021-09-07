@@ -150,23 +150,23 @@ def dashboard():
         [
             dbc.Row(children=[
                 dbc.Col(children=[
-                    dbc.Label('Complexity')], style={'margin-left': '5px'}),
+                    dbc.Label('Distance', style={'margin-left': '5px'})
+                ]),
                 dbc.Col(children=[
-                    dbc.Label('Distance')
-                ])
+                    dbc.Label(id='complex-label', children=['Complexity'])], style={'margin-left': '5px'})
             ]),
             dbc.Row(children=[
-                dbc.Col(children=[
-                    daq.LEDDisplay(id='complex-display',
-                                   value="0000",
-                                   size=22)
-                ], width='auto'),
                 dbc.Col(children=[
                     daq.LEDDisplay(id='distance-display',
                                    value="0000",
                                    size=22)
                 ], width='auto'
-                )
+                ),
+                dbc.Col(children=[
+                    daq.LEDDisplay(id='complex-display',
+                                   value="0000",
+                                   size=22)
+                ], width='auto')
             ]
             )
         ], body=True, style={'margin-right': '20px', 'margin-left': '20px'}
@@ -236,6 +236,18 @@ def toggle_collapse(n, is_open, alg_name):
 
 
 @app.callback(
+    [Output('complex-label', 'style'),
+     Output('complex-display', 'style')],
+    Input('alg-name', 'value')
+)
+def hide_complexity(alg):
+    if alg == 'CC':
+        return {'display': 'none'}, {'display': 'none'}
+    else:
+        return {'display': 'block'}, {'display': 'block'}
+
+
+@app.callback(
     [Output("modal", "is_open"), Output("modal", "children")],
     [Input("help", "n_clicks"), Input("close", "n_clicks")],
     [State("modal", "is_open"), State("alg-name", "value")],
@@ -282,13 +294,14 @@ def start_calculations(n, alg, local_state):
      Input('main-graph', 'relayoutData'),
      Input('path_data', 'data'),
      Input('run-timer', 'n_intervals'),
+     Input('reset', 'n_clicks')
      ],
     [State('run-timer', 'disabled'),
      State('local_state', 'data'),
      State('path_data', 'data')]
 )
 def display_click_data(
-        click_data, rel_data, path_data_trigger, timer,  # inputs
+        click_data, rel_data, path_data_trigger, timer,  n_reset,  # inputs
         run_timer_status, local_state, path_data  # states
 ):
     """
@@ -394,6 +407,13 @@ def display_click_data(
                    False, distance, complexity
         else:
             return dash.no_update, {'selected': selected, 'zoom': zoom, 'center': center, 'counter': 0}, True, distance, complexity
+
+    elif ctx == 'reset':
+        logger.debug('Map reset')
+        distance, complexity = '0000', '0000'
+        return PlotlyMap.cleaned_map(df, zoom=DEFAULT_ZOOM), \
+               {'selected': [], 'zoom': DEFAULT_ZOOM, 'center': center, 'counter': 0}, \
+               True, distance, complexity
 
     else:
         return dash.no_update, dash.no_update, dash.no_update, distance, complexity
