@@ -26,7 +26,6 @@ class ChristAlgorithm:
         self.df_dist = distances_table(df)
         self.G = self.create_graph(self.df, self.df_dist)
 
-        self._complexity = 0
         self.subG = None
 
     @staticmethod
@@ -142,5 +141,5 @@ class ChristAlgorithm:
         # distance calculation
         distance = sum([get_distance(node1, node2, df_dist=cf_path.df_dist) for node1, node2 in final_path])
 
-        return PathData(distance=distance, complexity=0, path=final_path, path_sequence=path_sequence,
+        return PathData(distance=distance, complexity=complexity, path=final_path, path_sequence=path_sequence,
                         second_path_sequence=second_path_sequence, nodes_sequence=nodes_sequence)

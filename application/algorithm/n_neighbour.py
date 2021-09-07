@@ -101,5 +101,5 @@ class NearestNeighbour:
 
         distance = float(np.sum([nn_path.get_distance(path[i], path[i + 1]) for i in range(len(path) - 1)]))
 
-        return PathData(distance=distance, complexity=0, path=path, path_sequence=path_sequence,
+        return PathData(distance=distance, complexity=nn_path._complexity, path=path, path_sequence=path_sequence,
                         second_path_sequence=second_path_sequence, nodes_sequence=nodes_sequence)
