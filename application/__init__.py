@@ -2,6 +2,7 @@ from application.plotly_objects import PlotlyMap
 from application.algorithm.n_neighbour import NearestNeighbour
 from application.algorithm.christ import ChristAlgorithm
 from application.algorithm.concord import ConcordAlgorithm
+from application.algorithm.concord_c import ConcordCImplemented
 from application.algorithm import PathData
 
 import dash_core_components as dcc
@@ -18,11 +19,13 @@ import pathlib
 
 alg_lst = [{'label': 'Nearest Neighbor', 'value': 'NN'},
            {'label': 'Christofides Algorithm', 'value': 'CA'},
-           {'label': 'Concorde Algorithm', 'value': 'CC'}]
+           {'label': 'Concorde Algorithm', 'value': 'CC'},
+           {'label': 'Concorde C++', 'value': 'C2'}]
 
 header = {"NN": 'Nearest neighbour algorithm',
           "CA": 'Christofides algorithm',
-          "CC": 'Concorde Algorithm'}
+          "CC": 'Concorde Algorithm',
+          "C2": 'Concorde C++'}
 
 body = {
     "NN": 'The nearest neighbour algorithm was one of the first algorithms used to solve the travelling salesman problem'
@@ -35,7 +38,8 @@ body = {
           'guarantees that its solutions will be within a factor of 3/2 of the optimal solution length, '
           'and is named after Nicos Christofides and Anatoliy I. Serdyukov, who discovered it independently in '
           '1976.',
-    "CC": 'Concorde algorithm (suboptimal)'}
+    "CC": 'Concorde algorithm (suboptimal)',
+    "C2": 'Concorde algorithm implemented on C++'}
 
 interval_ms = 2000
 DEFAULT_ZOOM = 4
@@ -59,7 +63,9 @@ logger.addHandler(sh)
 
 
 class PathMaker:
-
+    """
+    Start path calculation
+    """
     @staticmethod
     def return_path_data(alg: str, work_df: pd.DataFrame):
         if alg == 'NN':
@@ -68,6 +74,8 @@ class PathMaker:
             path_info = ChristAlgorithm.path_facility(work_df)
         elif alg == 'CC':
             path_info = ConcordAlgorithm.path_facility(work_df)
+        elif alg == 'C2':
+            path_info = ConcordCImplemented.path_facility(work_df)
         else:
             raise ValueError("Incorrect algorithm type")
 
@@ -75,6 +83,12 @@ class PathMaker:
 
     @staticmethod
     def return_path_json(alg: str, work_df: pd.DataFrame) -> dict:
+        """
+        Returns path as a dictionary
+        :param alg: algorithm name
+        :param work_df: table with cities' names and lon/lat
+        :return:
+        """
 
         path_data = PathMaker.return_path_data(alg, work_df)
 
@@ -86,6 +100,9 @@ class PathMaker:
 
 
 class MainResponse:
+    """
+    Generates response for visualization update
+    """
 
     @classmethod
     def response(cls,
@@ -112,7 +129,7 @@ class MainResponse:
 def navBar():
     """
     Simple NavBar constructor
-    :return:
+    :return: navigation bar instance
     """
     navbar = dbc.NavbarSimple(
         children=[],
@@ -127,7 +144,7 @@ def navBar():
 def dashboard():
     """
     DashBoard HTML constructor
-    :return:
+    :return: main dashboard as an layout instance
     """
 
     # controls (left upper panel)
@@ -221,6 +238,11 @@ def dashboard():
 
 
 def make_modal(alg_name):
+    """
+    Makes model window
+    :param alg_name: algorithm name
+    :return: modal window instance
+    """
     return [dbc.ModalHeader(header[alg_name]),
             dbc.ModalBody(html.Div(children=body[alg_name], style={'text-justify': 'center', 'align': 'center'})),
             dbc.ModalFooter(
@@ -264,7 +286,12 @@ def toggle_collapse(n, is_open, alg_name):
     Input('alg-name', 'value')
 )
 def hide_complexity(alg):
-    if alg == 'CC':
+    """
+    Hides complexity display
+    :param alg: algorithm name
+    :return: style parameters of complexity label and display
+    """
+    if alg in ['CC', 'C2']:
         return {'display': 'none'}, {'display': 'none'}
     else:
         return {'display': 'block'}, {'display': 'block'}
@@ -295,6 +322,14 @@ def toggle_modal(n1, n2, is_open, alg_name):
     [State('alg-name', 'value'),
      State('local_state', 'data')])
 def start_calculations(n, alg, local_state):
+    """
+    Runs path calculation
+    :param n: click's number of the button, not used
+    :param alg: algorithm name
+    :param local_state: reads local state from storage object.
+    Used to make server stateless
+    :return: path or raise PreventUpdateException
+    """
     if n:
         if (n > 0) & (local_state is not None):
             if len(local_state['selected']) > 0:
@@ -333,6 +368,12 @@ def display_click_data(
 ):
     """
     Main callback updating the graph
+    :param path_data: path to be visualized
+    :param pause_label: whether pause is active
+    :param n_pause: button n-clicks, not used
+    :param n_reset: button n-clicks, not used
+    :param path_data_trigger: storage object trigger. Activated when the object is changed
+    :param local_state: storage object
     :param click_data: point selection callback
     :param timer: built-in timer callback
     :param rel_data: layout data of the graph
